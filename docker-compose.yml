@@ -1,0 +1,15 @@
+version: '3.9'
+services:
+  mongo:
+    image: mongo:latest
+    restart: always
+    container_name: debugeando_mongo
+    hostname: host-mongo
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: pass
+    ports:
+      - "27017:27017"
+    volumes:
+      - ./data_mongo:/data/db
+      - ./data_mongo/log:/var/log/mongodb
